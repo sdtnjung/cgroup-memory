@@ -1,0 +1,23 @@
+[package]
+name = "cgroup-memory"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+keywords = ["sysfs", "cgroup", "memory", "linux"]
+categories = ["os::linux-apis", "memory-management"]
+repository = "https://github.com/sdtnjung/cgroup-memory.git"
+readme = "README.md"
+description = "A library for reading and interpreting `/sys/fs/cgroup` memory statistics."
+
+[dev-dependencies]
+# These are bench dependencies
+criterion = { version = "0.5" }
+sysfs_lib = "0.0.1"
+
+[[bench]]
+name = "max_memory"
+harness = false
+
+[features]
+test_memory_max_100m = []
+test_memory_max_max = []
